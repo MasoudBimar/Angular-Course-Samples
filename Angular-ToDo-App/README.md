@@ -1,3 +1,7 @@
+
+![alt text](https://raw.githubusercontent.com/MasoudBimar/Angular-Course-Samples/main/Angular-ToDo-App/src/assets/app.png?raw=true)
+
+
 # AngularApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.

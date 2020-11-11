@@ -1,0 +1,88 @@
+<div class="m-2">
+<!-- Interpolation -->
+<h2>{{ title | lowercase}}</h2>
+<hr/>
+<h2>{{ person | json}}</h2>
+<hr/>
+<img src="{{imgUrl}}" alt="angular" style="width: 150px;">
+<hr/>
+<!-- Property Binding -->
+<h2 [textContent]="title"></h2>
+<hr/>
+<img [src]="imgUrl" alt="angular" style="width: 150px;">
+
+<!-- Attribute Binding -->
+<hr/>
+<table>
+  <tr >
+    <td [attr.colspan]="colSpan">asfas</td>
+  </tr>
+</table>
+<hr/>
+<!-- Class Binding -->
+
+<button class="btn btn-primary" [class.active]="isActive"> Text</button>
+<hr/>
+<!-- Style Binding -->
+
+<button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'red'"> Text</button>
+
+<hr/>
+<!-- Event Binding -->
+
+<div (click)="log2($event)">
+  <button class="btn btn-primary" (click)="log($event)"> Text</button>
+</div>
+<!-- <input class="form-control" (click)="log($event)"  /> -->
+<hr/>
+<a href="#" (click)="log($event)"> anchor tag</a>
+<hr/>
+<!-- Event Filtering -->
+<input class="form-control" (keyup.enter)="onKeyUp($event)"  />
+<hr/>
+<input class="form-control" (keyup)="onKeyUp2($event)"  />
+<hr/>
+<!-- Template Variables -->
+
+<input class="form-control" (keyup.enter)="onKeyUp($event)"  />
+<hr/>
+<input class="form-control" (keyup.enter)="onKeyUp(myText.value)" #myText />
+<hr/>
+<input class="form-control" (keyup.enter)="onKeyUp()" [(ngModel)]="firstName" />
+<hr/>
+<input class="form-control" (keyup.enter)="onKeyUp()" [(ngModel)]="lastName"/>
+<hr/>
+<!-- Pipes -->
+
+<table class="table table-striped">  
+  <thead>  
+      <tr>  
+          <th>Code</th>  
+          <th>Name</th>  
+          <th>Gender</th>  
+          <th>Annual Salary</th>  
+          <th>Date of Birth</th>  
+      </tr>  
+  </thead>  
+  <tbody>  
+      <tr *ngFor='let employee of employees'>  
+          <td>{{employee.code }}</td>  
+
+          <td>{{employee.name|uppercase}}</td>  
+
+          <td>{{employee.gender}}</td>  
+          <td>{{employee.annualSalary}}</td>  
+          <td>{{employee.dateOfBirth}}</td>  
+      </tr>  
+      <tr *ngIf="!employees || employees.length==0">  
+          <td colspan="5">  
+              No employees to display  
+          </td>  
+      </tr>  
+  </tbody>  
+</table> 
+</div>
+
+<!-- Custom Pipes -->
+
+{{title | stringFormat: '_'}}
